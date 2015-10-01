@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="isf.proagro.android.ui.activities.BookletDetailActivity">
+
+    <include  layout="@layout/merge_toolbar"
+        android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+
+
+    <ViewSwitcher android:id="@+id/view_switcher"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/layout_progress"/>
+
+        <com.joanzapata.pdfview.PDFView
+            android:id="@+id/pdfview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"/>
+
+    </ViewSwitcher>
+
+
+</RelativeLayout>

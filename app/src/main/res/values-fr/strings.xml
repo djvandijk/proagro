@@ -1,0 +1,15 @@
+<resources>
+    <string name="drawer_open">Menu ouvert</string>
+    <string name="drawer_close">Menu fermé</string>
+    <string name="action_refresh">Rafraichir</string>
+    <string-array name="drawer_menu_title">
+        <item>Brochures</item>
+        <item>Favoris</item>
+        <item>A propos</item>
+    </string-array>
+    <string name="loading">Chargement</string>
+    <string name="error_loading">Impossible de récupérer les brochure.Vérifier votre connexion internet et réssayer.</string>
+    <string name="text_no_booklet">No booklets in your favorites.</string>
+    <string name="retry">Réessayer</string>
+    <string name="about">Créée le 14 Octobre 2003, Ingénieurs sans frontières Cameroun est une association d\’appui au développement.  ISF Cameroun favorise la promotion du développement humain à travers l\’accès aux connaissances scientifiques et technologiques. Son action s\’organise autour de quatre (4) programmes structurants : développement local, gestion des ressources naturelles, information et communication pour le développement et gestion des savoirs pour le développement. Pour plus d\’informations, visitez notre site : www.isf-cameroun.org</string>
+</resources>

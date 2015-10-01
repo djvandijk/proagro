@@ -1,0 +1,27 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="isf.proagro.android.ui.fragments.BookletsFragment">
+
+    <ViewFlipper android:id="@+id/view_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/layout_progress"/>
+
+        <isf.proagro.android.ui.widgets.BookletRecyclerView
+            android:id="@+id/recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarStyle="outsideOverlay"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/activity_horizontal_margin"
+            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:paddingLeft="@dimen/recycleview_separator_and_padding"
+            android:paddingRight="@dimen/recycleview_separator_and_padding"
+            android:paddingEnd="@dimen/recycleview_separator_and_padding"/>
+
+        <include layout="@layout/layout_no_booklet"/>
+
+    </ViewFlipper>
+
+</FrameLayout>
