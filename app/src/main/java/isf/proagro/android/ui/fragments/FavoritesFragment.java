@@ -2,7 +2,6 @@ package isf.proagro.android.ui.fragments;
 
 
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -18,7 +17,7 @@ import isf.proagro.android.model.Booklet;
 import isf.proagro.android.ui.abstracts.BaseFragment;
 import isf.proagro.android.ui.activities.MainActivity;
 import isf.proagro.android.ui.adapters.BookletAdapter;
-import isf.proagro.android.ui.widgets.BookletRecyclerView;
+import isf.proagro.android.ui.widgets.SimpleRecyclerView;
 import isf.proagro.android.utils.AndroidUtils;
 
 public class FavoritesFragment extends BaseFragment {
@@ -28,7 +27,7 @@ public class FavoritesFragment extends BaseFragment {
     public static final int NO_CONTENT       = 2;
 
     @InjectView(R.id.recycleview)
-    protected BookletRecyclerView mRecycleview;
+    protected SimpleRecyclerView mRecycleview;
 
     @InjectView(R.id.view_flipper)
     protected ViewFlipper mViewFlipper;
@@ -57,7 +56,7 @@ public class FavoritesFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         mRecycleview.setEmptyView(LayoutInflater.from(getActivity()).inflate(R.layout.layout_no_booklet, null, false));
         mRecycleview.setHasFixedSize(true);
-        mRecycleview.setLayoutManager(new GridLayoutManager(getActivity(), getResources().getInteger(R.integer.numbers_of_colums), LinearLayoutManager.VERTICAL, false));
+        mRecycleview.setLayoutManager(new LinearLayoutManager(getActivity()));
         mAdapter = new BookletAdapter(getActivity(), null, false);
         mRecycleview.setAdapter(mAdapter);
         updateBooklets();

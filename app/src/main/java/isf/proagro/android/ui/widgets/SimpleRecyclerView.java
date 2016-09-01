@@ -25,7 +25,7 @@ import android.view.View;
  * Simple RecyclerView subclass that supports providing an empty view (which
  * is displayed when the adapter has no data and hidden otherwise).
  */
-public class BookletRecyclerView extends RecyclerView {
+public class SimpleRecyclerView extends RecyclerView {
     private View mEmptyView;
 
     private AdapterDataObserver mDataObserver = new AdapterDataObserver() {
@@ -36,15 +36,15 @@ public class BookletRecyclerView extends RecyclerView {
         }
     };
 
-    public BookletRecyclerView(Context context) {
+    public SimpleRecyclerView(Context context) {
         super(context);
     }
 
-    public BookletRecyclerView(Context context, AttributeSet attrs) {
+    public SimpleRecyclerView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public BookletRecyclerView(Context context, AttributeSet attrs, int defStyle) {
+    public SimpleRecyclerView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
