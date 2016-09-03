@@ -14,8 +14,8 @@
     <dimen name="progress_bar_medium">80dp</dimen>
     <dimen name="progress_bar_small">40dp</dimen>
 
-    <dimen name="booklet_row_height">160dp</dimen>
-    <dimen name="booklet_image_width">100dp</dimen>
+    <dimen name="booklet_row_height">200dp</dimen>
+    <dimen name="booklet_image_width">120dp</dimen>
 
     <dimen name="recycleview_separator_and_padding">6dp</dimen>
 

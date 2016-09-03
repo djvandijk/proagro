@@ -13,13 +13,13 @@ import rx.Observable;
  */
 public interface RestAPI {
 
-    @GET("/library/{lang}/library.xml")
+    @GET("/library-new/{lang}/library.xml")
     Observable<Library> getLibrary(@Path("lang") String lang);
 
-    @GET("/library/{lang}/{path}")
+    @GET("/library-new/{lang}/{path}")
     Observable<Booklet> getBooklet(@Path("lang") String lang, @Path("path") String path);
 
-    @GET("/library/{lang}/{path}")
+    @GET("/library-new/{lang}/{path}")
     Observable<Response> getBookletPDF(@Path("lang") String lang, @Path("path") String path);
 
 }

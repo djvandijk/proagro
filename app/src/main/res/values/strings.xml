@@ -4,7 +4,7 @@
     <string name="drawer_close">Menu closed</string>
     <string name="action_refresh">Refresh</string>
     <string-array name="drawer_menu_title">
-        <item>Booklets</item>
+        <item>Knowledge Sharing</item>
         <item>Favorites</item>
         <item>About us</item>
     </string-array>

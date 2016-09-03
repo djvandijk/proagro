@@ -26,6 +26,8 @@ public class Booklet extends RealmObject {
 
     private boolean isFavorite = false;
 
+    private Category category;
+
     public String getPdfPath() {
         return pdfPath;
     }
@@ -53,6 +55,8 @@ public class Booklet extends RealmObject {
     public String getLanguage() {
         return language;
     }
+
+    public Category getCategory() { return category; }
 
     public void setTitle(String title) {
         this.title = title;
@@ -82,4 +86,5 @@ public class Booklet extends RealmObject {
         this.isFavorite = isFavorite;
     }
 
+    public void setCategory(Category category) { this.category = category; }
 }

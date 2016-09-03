@@ -6,13 +6,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 
+import isf.proagro.android.R;
 import isf.proagro.android.ui.abstracts.BaseActivity;
 import isf.proagro.android.ui.drawer.NavigationDrawerCallbacks;
 import isf.proagro.android.ui.drawer.NavigationDrawerFragment;
-import isf.proagro.android.R;
 import isf.proagro.android.ui.fragments.AboutFragment;
-import isf.proagro.android.ui.fragments.BookletsFragment;
 import isf.proagro.android.ui.fragments.FavoritesFragment;
+import isf.proagro.android.ui.fragments.KnowledgeSharingFragment;
 import isf.proagro.android.utils.SaveInstanceUtils;
 
 
@@ -33,7 +33,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerCallba
         if (mFragmentManager == null)
             mFragmentManager = getSupportFragmentManager();
         if (mCurrentSelectedPosition == -1) {
-            addFragmentToContainer(BookletsFragment.newInstance());
+            addFragmentToContainer(KnowledgeSharingFragment.newInstance());
         }
         mTitles = getResources().getStringArray(R.array.drawer_menu_title);
         mNavigationDrawerFragment = (NavigationDrawerFragment) mFragmentManager.findFragmentById(R.id.fragment_drawer);
@@ -50,7 +50,7 @@ public class MainActivity extends BaseActivity implements NavigationDrawerCallba
         if (mCurrentSelectedPosition != position) {
             switch (position) {
                 case 0:
-                    addFragmentToContainer(BookletsFragment.newInstance());
+                    addFragmentToContainer(KnowledgeSharingFragment.newInstance());
                     break;
                 case 1:
                     addFragmentToContainer(FavoritesFragment.newInstance());
@@ -65,7 +65,9 @@ public class MainActivity extends BaseActivity implements NavigationDrawerCallba
         if (mTitles == null) {
             mTitles = getResources().getStringArray(R.array.drawer_menu_title);
         }
-        setTitle(mTitles[position]);
+        if (mCurrentSelectedPosition > -1) {
+            setTitle(mTitles[position]);
+        }
         mCurrentSelectedPosition = position;
     }
 
@@ -73,6 +75,12 @@ public class MainActivity extends BaseActivity implements NavigationDrawerCallba
         if (mFragmentManager == null)
             mFragmentManager = getSupportFragmentManager();
         mFragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+    }
+
+    public void addBookletFragmentToContainer(Fragment fragment, String title) {
+        addFragmentToContainer(fragment);
+        setTitle(title);
+        mCurrentSelectedPosition = -1;
     }
 
 
@@ -106,5 +114,4 @@ public class MainActivity extends BaseActivity implements NavigationDrawerCallba
     public boolean isNavigationDraweOpen() {
         return mNavigationDrawerFragment.isDrawerOpen();
     }
-
 }

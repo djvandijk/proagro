@@ -8,7 +8,7 @@
         android:layout_height="match_parent">
         <include layout="@layout/layout_progress"/>
 
-        <isf.proagro.android.ui.widgets.BookletRecyclerView
+        <isf.proagro.android.ui.widgets.SimpleRecyclerView
             android:id="@+id/recycleview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

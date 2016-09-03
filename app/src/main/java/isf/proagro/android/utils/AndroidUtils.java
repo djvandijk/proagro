@@ -8,11 +8,13 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Display;
 
+import java.util.Arrays;
 import java.util.Locale;
 
 import io.realm.Realm;
 import isf.proagro.android.R;
 import isf.proagro.android.model.Booklet;
+import isf.proagro.android.model.Category;
 
 /**
  * Created by eddyhugues on 15-05-17.
@@ -36,6 +38,34 @@ public class AndroidUtils {
         b.setIsFavorite(isFavorite);
         b.setPdfPath(booklet.getPdfPath());
         return b;
+    }
+
+    public static Category createRealmCategory(Realm realm, String language, Category category) {
+        Category c = realm
+                .where(Category.class)
+                .equalTo("name", category.getName())
+                .equalTo("language", language).findFirst();
+
+        if (c == null) {
+            c = realm.createObject(Category.class);
+            c.setName(category.getName());
+            c.setLanguage(language);
+        }
+        c.setBookletNames(TextUtils.join(",", category.getXmlBookletNames()));
+        return c;
+    }
+
+    public static Category getRealmCategory(Realm realm, String language, String name) {
+        Category c = realm
+                .where(Category.class)
+                .equalTo("name", name)
+                .equalTo("language", language).findFirst();
+
+        if (c != null) {
+            c.setXmlBookletNames(Arrays.asList(c.getBookletNames().split(",")));
+        }
+
+        return c;
     }
 
     public static int getScreenHeight(Activity act) {

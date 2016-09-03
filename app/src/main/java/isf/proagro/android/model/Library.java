@@ -10,10 +10,10 @@ import java.util.List;
  */
 @Root(name = "library")
 public class Library {
-    @ElementList(entry="booklet", inline=true)
-    private List<String> booklets;
+    @ElementList(entry="category", inline=true)
+    private List<Category> categories;
 
-    public List<String> getBooklets() {
-        return booklets;
+    public List<Category> getCategories() {
+        return categories;
     }
 }
